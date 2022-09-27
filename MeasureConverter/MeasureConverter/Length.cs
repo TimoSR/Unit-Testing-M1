@@ -9,13 +9,12 @@ public class Length
     
     public Length(double number, string numberSystem)
     {
-        this._number = number;
-        this._numberSystem = numberSystem.ToUpper();
+        _number = number;
+        _numberSystem = numberSystem.ToUpper();
     }
 
     public decimal Convert()
     {
-
         Decimal result = 0;
 
         if (_numberSystem == "METRIC")
@@ -29,5 +28,4 @@ public class Length
 
         return decimal.Round(result, 2, MidpointRounding.ToZero);
     }
-
 }
