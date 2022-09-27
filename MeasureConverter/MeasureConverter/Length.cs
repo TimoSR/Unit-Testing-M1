@@ -4,30 +4,30 @@ namespace MeasureConverter;
 
 public class Length
 {
-    private double number;
-    private string numberSystem;
+    private readonly double _number;
+    private readonly string _numberSystem;
     
     public Length(double number, string numberSystem)
     {
-        this.number = number;
-        this.numberSystem = numberSystem.ToUpper();
+        this._number = number;
+        this._numberSystem = numberSystem.ToUpper();
     }
 
-    public Decimal Convert()
+    public decimal Convert()
     {
 
         Decimal result = 0;
 
-        if (numberSystem == "METRIC")
+        if (_numberSystem == "METRIC")
         {
-            result = new decimal(number * 2.54);
+            result = new decimal(_number * 2.54);
         }
-        else if (numberSystem == "IMPERIAL")
+        else if (_numberSystem == "IMPERIAL")
         {
-            result = new decimal(number / 2.54);
+            result = new decimal(_number / 2.54);
         }
 
-        return Decimal.Round(result, 2, MidpointRounding.ToZero);
+        return decimal.Round(result, 2, MidpointRounding.ToZero);
     }
 
 }
