@@ -19,7 +19,7 @@ public class WeightTests
     [TestCase(1, "IMPERIaL", 2.20 )]
     [TestCase(1000, "imperial", 2204.62)]
     
-    public void Convert_GivenGrams_ReturnsPounds(double numberInKg, string convertToPounds, double expectedInPounds)
+    public void Convert_GivenGrams_ReturnsPounds(double numberInKg, string convertToPounds, decimal expectedInPounds)
     {
         // Act
         var result = _weight.Converter(numberInKg, convertToPounds);
@@ -34,7 +34,7 @@ public class WeightTests
     [TestCase(0.5, "METRIC", 0.23)]
     [TestCase(1, "METRIC", 0.45)]
     [TestCase(1000, "metric", 453.59)]
-    public void Convert_GivenGrams_ReturnsKilograms(double numberInPounds, string convertToKG, double expectedInKg)
+    public void Convert_GivenGrams_ReturnsKilograms(double numberInPounds, string convertToKG, decimal expectedInKg)
     {
         // Act
         var result = _weight.Converter(numberInPounds, convertToKG);
